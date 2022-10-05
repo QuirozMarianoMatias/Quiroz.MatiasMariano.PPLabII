@@ -79,36 +79,52 @@ namespace Vista
             Usuario usuario = (Usuario)this.lstVendedor.SelectedItem;
             Producto producto = (Producto)this.lstProductos.SelectedItem;
             float pago = float.Parse(this.txtPago.Text);
-
-            if (electronica.VenderProducto(electronica,producto,pago, this.txtMetodoDePago.Text) && usuario != null)
-            {
-                int n;
-
-                n = this.dgbFactura.Rows.Add();
-
-                this.dgbFactura.Rows[n].Cells[0].Value = usuario.Apellido;
-                this.dgbFactura.Rows[n].Cells[1].Value = producto.Tipo;
+            
                 
-                this.dgbFactura.Rows[n].Cells[3].Value = pago;
-                this.dgbFactura.Rows[n].Cells[4].Value = this.txtMetodoDePago.Text;
-                if(this.txtMetodoDePago.Text == "Credito")
+
+
+             if (electronica.VenderProducto(electronica, producto, pago, this.txtMetodoDePago.Text) && usuario != null)
+             {
+                float precio = producto.Precio;
+                
+                if (this.txtMetodoDePago.Text == "Credito")
                 {
-                    this.dgbFactura.Rows[n].Cells[5].Value = pago - Calculos.AplicarAumento(producto.Precio);
-                    this.dgbFactura.Rows[n].Cells[2].Value =  Calculos.AplicarAumento(producto.Precio);
+                    
+
+                    precio = Calculos.AplicarAumento(producto.Precio);
+                }
+                    FrmFactura frmFactura = new FrmFactura(producto,pago,precio, this.txtMetodoDePago.Text);
+
+               frmFactura.ShowDialog();
+
+               if (MessageBox.Show("esta seguro que desea realizar la compra?", "Venta", MessageBoxButtons.YesNo) == DialogResult.Yes)
+               {
+
+                    int n;
+
+                    n = this.dgbFactura.Rows.Add();
+
+                    this.dgbFactura.Rows[n].Cells[0].Value = usuario.Apellido;
+                    this.dgbFactura.Rows[n].Cells[1].Value = producto.Tipo;
+
+                    this.dgbFactura.Rows[n].Cells[3].Value = pago;
+                    this.dgbFactura.Rows[n].Cells[4].Value = this.txtMetodoDePago.Text;
+                    
+                    this.dgbFactura.Rows[n].Cells[5].Value = pago - precio;
+                    this.dgbFactura.Rows[n].Cells[2].Value = precio;
+                    
+                    
+
+                    this.reset();
+
                 }
                 else
                 {
-                    this.dgbFactura.Rows[n].Cells[5].Value = pago - producto.Precio;
-                    this.dgbFactura.Rows[n].Cells[2].Value = producto.Precio;
+                    MessageBox.Show("recibe que los campos esten correctos!!!", "Error", MessageBoxButtons.OK);
                 }
-                
-                this.reset();
 
             }
-            else
-            {
-                MessageBox.Show("recibe que los campos esten correctos!!!", "Error", MessageBoxButtons.OK);
-            }
+            
 
 
 

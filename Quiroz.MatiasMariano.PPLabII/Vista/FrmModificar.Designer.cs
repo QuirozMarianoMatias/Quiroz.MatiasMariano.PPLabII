@@ -39,6 +39,8 @@ namespace Vista
             this.txtCombo = new System.Windows.Forms.TextBox();
             this.rtfProducto = new System.Windows.Forms.RichTextBox();
             this.lblProducto = new System.Windows.Forms.Label();
+            this.txtStock = new System.Windows.Forms.TextBox();
+            this.lblStock = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnAceptar
@@ -82,7 +84,7 @@ namespace Vista
             // lblPrecio
             // 
             this.lblPrecio.AutoSize = true;
-            this.lblPrecio.Location = new System.Drawing.Point(425, 287);
+            this.lblPrecio.Location = new System.Drawing.Point(365, 287);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(40, 15);
             this.lblPrecio.TabIndex = 4;
@@ -92,7 +94,7 @@ namespace Vista
             // txtPrecio
             // 
             this.txtPrecio.Enabled = false;
-            this.txtPrecio.Location = new System.Drawing.Point(425, 305);
+            this.txtPrecio.Location = new System.Drawing.Point(365, 305);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(100, 23);
             this.txtPrecio.TabIndex = 5;
@@ -134,11 +136,32 @@ namespace Vista
             this.lblProducto.TabIndex = 9;
             this.lblProducto.Text = "Producto";
             // 
+            // txtStock
+            // 
+            this.txtStock.Enabled = false;
+            this.txtStock.Location = new System.Drawing.Point(496, 305);
+            this.txtStock.Name = "txtStock";
+            this.txtStock.Size = new System.Drawing.Size(100, 23);
+            this.txtStock.TabIndex = 10;
+            this.txtStock.Visible = false;
+            // 
+            // lblStock
+            // 
+            this.lblStock.AutoSize = true;
+            this.lblStock.Location = new System.Drawing.Point(496, 287);
+            this.lblStock.Name = "lblStock";
+            this.lblStock.Size = new System.Drawing.Size(36, 15);
+            this.lblStock.TabIndex = 11;
+            this.lblStock.Text = "Stock";
+            this.lblStock.Visible = false;
+            // 
             // FrmModificar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(685, 468);
+            this.Controls.Add(this.lblStock);
+            this.Controls.Add(this.txtStock);
             this.Controls.Add(this.lblProducto);
             this.Controls.Add(this.rtfProducto);
             this.Controls.Add(this.txtCombo);
@@ -172,5 +195,7 @@ namespace Vista
         private System.Windows.Forms.TextBox txtCombo;
         private System.Windows.Forms.RichTextBox rtfProducto;
         private System.Windows.Forms.Label lblProducto;
+        private System.Windows.Forms.TextBox txtStock;
+        private System.Windows.Forms.Label lblStock;
     }
 }

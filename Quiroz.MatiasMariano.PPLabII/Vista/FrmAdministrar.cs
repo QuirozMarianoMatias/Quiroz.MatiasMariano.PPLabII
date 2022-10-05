@@ -107,18 +107,32 @@ namespace Vista
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            if(this.electronica==(Producto)this.lstProductos.SelectedItem)
+            
+            if (this.electronica==(Producto)this.lstProductos.SelectedItem)
             {
                 this.Hide();
                 Form frmModificar = new FrmModificar((Producto)this.lstProductos.SelectedItem, this);
                 frmModificar.Show();
             }
+            
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.frmLogin.Show();
             this.Close();
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(this.txtBuscar.Text);
+
+            this.lstProductos.Items.Clear();
+            if(electronica.Productos!= null)
+            {
+                this.CargarProducto(this.electronica.BuscarPorId(electronica, id));
+            }
+            
         }
     }
 }

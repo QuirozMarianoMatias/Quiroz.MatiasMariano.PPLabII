@@ -27,7 +27,7 @@ namespace Vista
             electronica += new Perifericos(1,1000,"logitech", true, ETipo.Teclado,"combo1",20);
             electronica += new Perifericos(2, 3000, "logitech", true, ETipo.Mouse, "combo1",15);
             electronica += new Cpu(3, 1000, "intel",1, ETipo.Procesador, "combo2",3);
-            electronica += new Cpu(3, 1000, "Nvidia", 3, ETipo.PlacaDeVideo, "combo2", 5); ;
+            electronica += new Cpu(4, 1000, "Nvidia", 3, ETipo.PlacaDeVideo, "combo2", 5); ;
 
 
 

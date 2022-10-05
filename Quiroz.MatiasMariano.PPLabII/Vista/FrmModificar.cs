@@ -31,6 +31,7 @@ namespace Vista
 
             this.cmbModificar.Items.Add("Combo");
             this.cmbModificar.Items.Add("Precio");
+            this.cmbModificar.Items.Add("Stock");
             this.rtfProducto.Text = this.producto.ToString();
 
         }
@@ -54,7 +55,16 @@ namespace Vista
                         this.producto.Precio = float.Parse(this.txtPrecio.Text);
                     }
                 }
+                else
+                {
+                    if(MessageBox.Show("El stock se sumara al existente esta seguro?", "Modificar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        this.producto.Stock += int.Parse(this.txtStock.Text);
+                    }
+                    
+                }
             }
+
         }
 
         private void cmbModificar_SelectedIndexChanged(object sender, EventArgs e)
@@ -65,6 +75,10 @@ namespace Vista
             this.txtCombo.Visible = false;
             this.txtPrecio.Enabled = false;
             this.txtPrecio.Visible = false;
+            this.lblStock.Visible = false;
+            this.txtStock.Enabled = false;
+            this.txtStock.Visible = false;
+
             if (this.cmbModificar.SelectedItem.ToString() == "Combo")
             {
                 this.lblCombo.Visible = true;
@@ -79,13 +93,25 @@ namespace Vista
                     this.txtPrecio.Enabled = true;
                     this.txtPrecio.Visible = true;
                 }
+                else
+                {
+                    if((this.cmbModificar.SelectedItem.ToString() == "Stock"))
+                    {
+                        this.lblStock.Visible = true;
+                        this.txtStock.Enabled = true;
+                        this.txtStock.Visible = true;
+                    }
+                }
             }
             
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Si efectuo cambios por favor presionar filtrar para ver los cambios","Aviso", MessageBoxButtons.OK);
             this.Close();
+
+            
             this.frmAdministrar.Show();
         }
     }

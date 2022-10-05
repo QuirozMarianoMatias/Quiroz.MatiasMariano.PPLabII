@@ -118,7 +118,7 @@ namespace Entidades
         {
             StringBuilder sb = new StringBuilder();
 
-           
+            sb.AppendLine($"id : {this.Id}");
             sb.AppendLine($"Marca : {this.Marca}");
             sb.AppendLine($"tipo : {this.Tipo}");
             sb.AppendLine($"Precio : {this.Precio}");

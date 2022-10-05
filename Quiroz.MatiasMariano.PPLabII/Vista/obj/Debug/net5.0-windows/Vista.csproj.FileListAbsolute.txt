@@ -24,3 +24,4 @@ C:\Users\Quiroz Family\Desktop\Quiroz.MatiasMariano.PPLabII\Quiroz.MatiasMariano
 C:\Users\Quiroz Family\Desktop\Quiroz.MatiasMariano.PPLabII\Quiroz.MatiasMariano.PPLabII\Vista\obj\Debug\net5.0-windows\Vista.FrmAgregar.resources
 C:\Users\Quiroz Family\Desktop\Quiroz.MatiasMariano.PPLabII\Quiroz.MatiasMariano.PPLabII\Vista\obj\Debug\net5.0-windows\Vista.FrmModificar.resources
 C:\Users\Quiroz Family\Desktop\Quiroz.MatiasMariano.PPLabII\Quiroz.MatiasMariano.PPLabII\Vista\obj\Debug\net5.0-windows\Vista.FrmLogin.resources
+C:\Users\Quiroz Family\Desktop\Quiroz.MatiasMariano.PPLabII\Quiroz.MatiasMariano.PPLabII\Vista\obj\Debug\net5.0-windows\Vista.FrmFactura.resources

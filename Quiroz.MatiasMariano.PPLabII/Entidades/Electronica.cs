@@ -229,8 +229,26 @@ namespace Entidades
 
         }
 
-        
-        
+        public List<Producto> BuscarPorId(Electronica electronica, int Id)
+        {
+            List<Producto> productos = new List<Producto>();
+            foreach (Producto producto in electronica.Productos)
+            {
+                if (producto.Id == Id)
+                {
+                    productos.Add(producto);
+                }
+
+            }
+
+
+            return productos;
+
+
+        }
+
+
+
 
     }
 }
