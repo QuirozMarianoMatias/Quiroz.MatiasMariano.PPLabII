@@ -122,6 +122,7 @@ namespace Entidades
             sb.AppendLine($"Marca : {this.Marca}");
             sb.AppendLine($"tipo : {this.Tipo}");
             sb.AppendLine($"Precio : {this.Precio}");
+            sb.AppendLine($"Combo : {this.Combo}");
             sb.AppendLine($"Stock : {this.Stock}");
 
 
