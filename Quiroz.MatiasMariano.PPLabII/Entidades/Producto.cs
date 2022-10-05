@@ -12,20 +12,25 @@ namespace Entidades
         PlacaDeVideo,
         Teclado,
         Mouse,
-        Auriculares
+        Auriculares,
     }
     public abstract class Producto
     {
         protected int id;
         protected float precio;
         protected ETipo tipo;
+        protected string combo;
+        protected int stock;
         protected string marca;
 
-        protected Producto(int id, float precio, string marca)
+        protected Producto(int id, float precio, string marca,ETipo tipo, string combo,int stock)
         {
             this.id = id;
             this.precio = precio;
             this.marca = marca;
+            this.tipo = tipo;
+            this.combo = combo;
+            this.stock = stock;
         }
 
 
@@ -44,6 +49,32 @@ namespace Entidades
             }
         }
 
+        public int Stock
+        {
+            get
+            {
+                return this.stock;
+            }
+            set
+            {
+                if(value > 0)
+                {
+                    this.stock = value;
+                }
+                else
+                {
+                    this.stock = 0;
+                }
+            }
+        }
+
+        public string Tipo
+        {
+            get
+            {
+                return Enum.GetName(typeof(ETipo), this.tipo);
+            }
+        }
         public string Marca
         {
             get
@@ -51,6 +82,25 @@ namespace Entidades
                 return this.marca;
             }
           
+        }
+
+        public string Combo
+        {
+            get
+            {
+                return this.combo;
+            }
+            set
+            {
+                if(value != null )
+                {
+                    this.combo = "sin promocion";
+                }
+                else
+                {
+                    this.combo = value;
+                }
+            }
         }
 
         public int Id
@@ -62,14 +112,17 @@ namespace Entidades
 
         }
 
+      
+
         public virtual string mostrar()
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.AppendLine($"id :{Id}");
-            sb.AppendLine($"id :{Marca}");
-            sb.AppendLine($"tipo:{Enum.GetName(typeof(ETipo),tipo)}");
-            sb.AppendLine($"id :{Precio}");
+           
+            sb.AppendLine($"Marca : {this.Marca}");
+            sb.AppendLine($"tipo : {this.Tipo}");
+            sb.AppendLine($"Precio : {this.Precio}");
+            sb.AppendLine($"Stock : {this.Stock}");
 
 
             return sb.ToString();
@@ -77,10 +130,10 @@ namespace Entidades
 
         }
 
-        public override string ToString()
-        {
-            return mostrar();
-        }
+       public override string ToString()
+       {
+            return this.mostrar();
+       }
 
 
     }

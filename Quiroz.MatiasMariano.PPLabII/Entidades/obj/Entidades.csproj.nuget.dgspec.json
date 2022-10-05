@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Quiroz Family\\source\\repos\\Quiroz.MatiasMariano.PPLabII\\Entidades\\Entidades.csproj": {}
+    "C:\\Users\\Quiroz Family\\Desktop\\Quiroz.MatiasMariano.PPLabII\\Quiroz.MatiasMariano.PPLabII\\Entidades\\Entidades.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Quiroz Family\\source\\repos\\Quiroz.MatiasMariano.PPLabII\\Entidades\\Entidades.csproj": {
+    "C:\\Users\\Quiroz Family\\Desktop\\Quiroz.MatiasMariano.PPLabII\\Quiroz.MatiasMariano.PPLabII\\Entidades\\Entidades.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Quiroz Family\\source\\repos\\Quiroz.MatiasMariano.PPLabII\\Entidades\\Entidades.csproj",
+        "projectUniqueName": "C:\\Users\\Quiroz Family\\Desktop\\Quiroz.MatiasMariano.PPLabII\\Quiroz.MatiasMariano.PPLabII\\Entidades\\Entidades.csproj",
         "projectName": "Entidades",
-        "projectPath": "C:\\Users\\Quiroz Family\\source\\repos\\Quiroz.MatiasMariano.PPLabII\\Entidades\\Entidades.csproj",
+        "projectPath": "C:\\Users\\Quiroz Family\\Desktop\\Quiroz.MatiasMariano.PPLabII\\Quiroz.MatiasMariano.PPLabII\\Entidades\\Entidades.csproj",
         "packagesPath": "C:\\Users\\Quiroz Family\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Quiroz Family\\source\\repos\\Quiroz.MatiasMariano.PPLabII\\Entidades\\obj\\",
+        "outputPath": "C:\\Users\\Quiroz Family\\Desktop\\Quiroz.MatiasMariano.PPLabII\\Quiroz.MatiasMariano.PPLabII\\Entidades\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Quiroz Family\\AppData\\Roaming\\NuGet\\NuGet.Config",

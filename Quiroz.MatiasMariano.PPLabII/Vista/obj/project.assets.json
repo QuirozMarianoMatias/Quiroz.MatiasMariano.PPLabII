@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net5.0-windows7.0": {}
+    "net5.0-windows7.0": {
+      "Entidades/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/Entidades.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Entidades.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Entidades/1.0.0": {
+      "type": "project",
+      "path": "../Entidades/Entidades.csproj",
+      "msbuildProject": "../Entidades/Entidades.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net5.0-windows7.0": []
+    "net5.0-windows7.0": [
+      "Entidades >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Quiroz Family\\.nuget\\packages\\": {}
@@ -13,11 +32,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Quiroz Family\\source\\repos\\Quiroz.MatiasMariano.PPLabII\\Vista\\Vista.csproj",
+      "projectUniqueName": "C:\\Users\\Quiroz Family\\Desktop\\Quiroz.MatiasMariano.PPLabII\\Quiroz.MatiasMariano.PPLabII\\Vista\\Vista.csproj",
       "projectName": "Vista",
-      "projectPath": "C:\\Users\\Quiroz Family\\source\\repos\\Quiroz.MatiasMariano.PPLabII\\Vista\\Vista.csproj",
+      "projectPath": "C:\\Users\\Quiroz Family\\Desktop\\Quiroz.MatiasMariano.PPLabII\\Quiroz.MatiasMariano.PPLabII\\Vista\\Vista.csproj",
       "packagesPath": "C:\\Users\\Quiroz Family\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Quiroz Family\\source\\repos\\Quiroz.MatiasMariano.PPLabII\\Vista\\obj\\",
+      "outputPath": "C:\\Users\\Quiroz Family\\Desktop\\Quiroz.MatiasMariano.PPLabII\\Quiroz.MatiasMariano.PPLabII\\Vista\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Quiroz Family\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -33,7 +52,11 @@
       "frameworks": {
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Quiroz Family\\Desktop\\Quiroz.MatiasMariano.PPLabII\\Quiroz.MatiasMariano.PPLabII\\Entidades\\Entidades.csproj": {
+              "projectPath": "C:\\Users\\Quiroz Family\\Desktop\\Quiroz.MatiasMariano.PPLabII\\Quiroz.MatiasMariano.PPLabII\\Entidades\\Entidades.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
