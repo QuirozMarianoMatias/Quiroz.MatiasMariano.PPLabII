@@ -25,11 +25,7 @@ namespace Vista
 
         private void FrmContador_Load(object sender, EventArgs e)
         {
-            this.cmbCombo.Items.Add("todos");
-
-           
-
-            this.cmbCombo.SelectedIndex = 0;
+         
 
             this.ActualizarLista();
 
@@ -39,7 +35,6 @@ namespace Vista
 
             this.dgvContador.Rows[n].Cells[0].Value = this.electronica.CantidadDeVentas;
             this.dgvContador.Rows[n].Cells[1].Value = this.electronica.BuscarProductoMasVendido(electronica);
-            this.dgvContador.Rows[n].Cells[2].Value = this.electronica.PromedioPorTag(electronica, this.cmbCombo.SelectedItem.ToString());
             this.dgvContador.Rows[n].Cells[3].Value = this.electronica.Capital;
         }
 
