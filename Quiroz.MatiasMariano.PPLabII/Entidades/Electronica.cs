@@ -174,7 +174,14 @@ namespace Entidades
         }
 
         
-
+        /// <summary>
+        /// metodo vender producto devuel verdadero si pudo realizar la venta si existe stock y el dinero del cliente alcanza
+        /// </summary>
+        /// <param name="electronica">electronica para buscar que existe el elemento en la lista</param>
+        /// <param name="producto">elemento a vender</param>
+        /// <param name="dineroDelCliente">pago del cliente</param>
+        /// <param name="metodoDePago">metodo de pago que escogio el cliente</param>
+        /// <returns>retorna verdadero si se pudo realizar la venta caso contrario devuelve falso</returns>
         public bool VenderProducto(Electronica electronica, Producto producto,float dineroDelCliente,string metodoDePago)
         {
             bool ventaCorrecta = false;
@@ -210,7 +217,12 @@ namespace Entidades
             return ventaCorrecta;
 
         }
-
+        /// <summary>
+        /// metodo que filtrar por combo y devuelve una lista con los combos filtrados
+        /// </summary>
+        /// <param name="electronica">electronica contiene la lista para buscar los productos</param>
+        /// <param name="combo">combo por el cual filtrar</param>
+        /// <returns>retorna una lista de productos filtradas</returns>
         public List<Producto> MostrarPorCombo(Electronica electronica, string combo)
         {
             List<Producto> productos = new List<Producto> ();
@@ -228,7 +240,12 @@ namespace Entidades
 
 
         }
-
+        /// <summary>
+        /// buscar por id sirve para buscar un producto en particular
+        /// </summary>
+        /// <param name="electronica">contiene la lista de productos</param>
+        /// <param name="Id">id para buscar el elemento</param>
+        /// <returns>devuelve el elemento encontrado</returns>
         public List<Producto> BuscarPorId(Electronica electronica, int Id)
         {
             List<Producto> productos = new List<Producto>();

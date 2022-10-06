@@ -48,14 +48,14 @@ namespace Vista
 
                     if (item.Admin)
                     {
-                        FrmPrincipal principal = new FrmPrincipal(electronica,this);
+                        FrmPrincipal principal = new FrmPrincipal(electronica,this,item);
                         principal.Show();
                         
                        
                     }
                     else
                     {
-                        FrmVentas ventas = new FrmVentas(electronica,this);
+                        FrmVentas ventas = new FrmVentas(electronica,this,item); 
                         ventas.Show();
                         //ventas.FormClosing();
                         

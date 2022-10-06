@@ -13,7 +13,10 @@ namespace Entidades
         {
             this.cantidadDeCooler = cantidadDeCooler;
         }
-
+        /// <summary>
+        /// sobreescritura del metodo mostrar que llama al metodo base y retorna un string con los datos del cpu
+        /// </summary>
+        /// <returns>retorna los datos del cpu</returns>
         public override string mostrar()
         {
 
@@ -30,7 +33,10 @@ namespace Entidades
             return sb.ToString();
 
         }
-
+        /// <summary>
+        /// sobreescritura del metodo toString que llama al metodo mostrar
+        /// </summary>
+        /// <returns>retorna los datos del cpu</returns>
         public override string ToString()
         {
             return this.mostrar();

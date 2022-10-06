@@ -80,6 +80,8 @@ namespace Vista
 
                 electronica += cpu;
             }
+            MessageBox.Show("Agregado con exito", "Agregar", MessageBoxButtons.OK);
+            FrmAdministrar.ActualizarLista();
 
         }
 

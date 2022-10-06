@@ -113,7 +113,10 @@ namespace Entidades
         }
 
       
-
+        /// <summary>
+        /// metodo mostrar muestra los datos del producto
+        /// </summary>
+        /// <returns>retorna los datos del producto</returns>
         public virtual string mostrar()
         {
             StringBuilder sb = new StringBuilder();
@@ -130,8 +133,11 @@ namespace Entidades
 
 
         }
-
-       public override string ToString()
+        /// <summary>
+        /// sobreescritura del metodo toString que llama al metodo mostrar
+        /// </summary>
+        /// <returns>retorna los datos del producto</returns>
+        public override string ToString()
        {
             return this.mostrar();
        }

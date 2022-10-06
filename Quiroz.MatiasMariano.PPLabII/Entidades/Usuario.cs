@@ -60,7 +60,13 @@ namespace Entidades
 
 
         }
-
+        /// <summary>
+        /// recorre la lista de usuarios para validar que la clave y el email sean correctos
+        /// </summary>
+        /// <param name="electronica">contiene la lista de usuarios</param>
+        /// <param name="email">email a corroborar</param>
+        /// <param name="clave">clave a corroborar</param>
+        /// <returns>retorna true si la clave y email son correctas caso contrario retorna false</returns>
         public static bool ValidarUsuario(Usuario electronica, string email, string clave)
         {
             if (electronica.email == email && electronica.clave == clave)
@@ -72,7 +78,10 @@ namespace Entidades
 
             return false;
         }
-
+        /// <summary>
+        /// muestra los datos del usuario
+        /// </summary>
+        /// <returns>retorna un string con los datos del usuario</returns>
         public string mostrar()
         {
             StringBuilder sb = new StringBuilder();
@@ -83,7 +92,10 @@ namespace Entidades
             return sb.ToString();
 
         }
-
+        /// <summary>
+        /// sobrecarga del toString llama al metodo mostrar
+        /// </summary>
+        /// <returns>retorna un string con los datos del usuario</returns>
         public override string ToString()
         {
             return this.mostrar();

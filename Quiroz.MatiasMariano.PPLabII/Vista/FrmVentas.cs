@@ -15,15 +15,17 @@ namespace Vista
     {
         private Electronica electronica;
         private FrmLogin frmLogin;
+        private Usuario usuario;
         public FrmVentas()
         {
             InitializeComponent();
         }
 
-        public FrmVentas(Electronica electronica, FrmLogin frmLogin) :this()
+        public FrmVentas(Electronica electronica, FrmLogin frmLogin,Usuario usuario) :this()
         {
             this.electronica = electronica;
             this.frmLogin = frmLogin;
+            this.usuario = usuario;
 
         }
         public new void FormClosing()
@@ -35,6 +37,16 @@ namespace Vista
 
         private void FrmVentas_Load(object sender, EventArgs e)
         {
+            if(this.usuario.Admin)
+            {
+                this.btnVender.BackColor = Color.DarkSeaGreen;
+                this.btnCerrar.BackColor = Color.DarkSeaGreen;
+            }
+            else
+            {
+                this.btnVender.BackColor = Color.DarkOliveGreen;
+                this.btnCerrar.BackColor = Color.DarkOliveGreen;
+            }
             this.CargarProducto();
             this.CargarVendedor();
         }
@@ -53,7 +65,9 @@ namespace Vista
               this.lstProductos.Items.Add(item);
             }
         }
-
+        /// <summary>
+        /// carga los usuarios al listbox
+        /// </summary>
         private void CargarVendedor()
         {
 
@@ -62,7 +76,9 @@ namespace Vista
                this.lstVendedor.Items.Add(item);
             }
         }
-
+        /// <summary>
+        /// limpia los controladores
+        /// </summary>
         private void reset()
         {
             this.lstProductos.Items.Clear();

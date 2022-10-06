@@ -42,6 +42,7 @@ namespace Vista
                 if (MessageBox.Show("Estas seguro de modificar el Combo?", "Modificar", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     this.producto.Combo = this.txtCombo.Text;
+                    MessageBox.Show("Modificado con exito", "Modificar", MessageBoxButtons.OK);
                 }
                     
 
@@ -53,6 +54,7 @@ namespace Vista
                     if (MessageBox.Show("Estas seguro de modificar el Precio?", "Modificar", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
                         this.producto.Precio = float.Parse(this.txtPrecio.Text);
+                        MessageBox.Show("Modificado con exito", "Modificar", MessageBoxButtons.OK);
                     }
                 }
                 else
@@ -60,10 +62,14 @@ namespace Vista
                     if(MessageBox.Show("El stock se sumara al existente esta seguro?", "Modificar", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
                         this.producto.Stock += int.Parse(this.txtStock.Text);
+                        MessageBox.Show("Modificado con exito", "Modificar", MessageBoxButtons.OK);
                     }
                     
                 }
             }
+            
+            this.rtfProducto.Text = this.producto.ToString();
+            frmAdministrar.ActualizarLista();
 
         }
 
@@ -108,7 +114,7 @@ namespace Vista
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Si efectuo cambios por favor presionar filtrar para ver los cambios","Aviso", MessageBoxButtons.OK);
+            
             this.Close();
 
             

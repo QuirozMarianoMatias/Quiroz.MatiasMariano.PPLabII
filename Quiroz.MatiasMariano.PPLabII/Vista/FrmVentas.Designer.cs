@@ -52,14 +52,18 @@ namespace Vista
             // lblProductos
             // 
             this.lblProductos.AutoSize = true;
-            this.lblProductos.Location = new System.Drawing.Point(28, 56);
+            this.lblProductos.BackColor = System.Drawing.Color.Transparent;
+            this.lblProductos.Font = new System.Drawing.Font("Bebas Neue", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblProductos.ForeColor = System.Drawing.Color.Cyan;
+            this.lblProductos.Location = new System.Drawing.Point(28, 67);
             this.lblProductos.Name = "lblProductos";
-            this.lblProductos.Size = new System.Drawing.Size(61, 15);
+            this.lblProductos.Size = new System.Drawing.Size(78, 23);
             this.lblProductos.TabIndex = 0;
             this.lblProductos.Text = "Productos";
             // 
             // lstProductos
             // 
+            this.lstProductos.BackColor = System.Drawing.Color.Aqua;
             this.lstProductos.FormattingEnabled = true;
             this.lstProductos.ItemHeight = 15;
             this.lstProductos.Location = new System.Drawing.Point(28, 93);
@@ -70,6 +74,7 @@ namespace Vista
             // 
             // lstVendedor
             // 
+            this.lstVendedor.BackColor = System.Drawing.Color.Aqua;
             this.lstVendedor.FormattingEnabled = true;
             this.lstVendedor.ItemHeight = 15;
             this.lstVendedor.Location = new System.Drawing.Point(484, 93);
@@ -80,14 +85,21 @@ namespace Vista
             // lblVendedor
             // 
             this.lblVendedor.AutoSize = true;
-            this.lblVendedor.Location = new System.Drawing.Point(527, 56);
+            this.lblVendedor.BackColor = System.Drawing.Color.Transparent;
+            this.lblVendedor.Font = new System.Drawing.Font("Bebas Neue", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblVendedor.ForeColor = System.Drawing.Color.Cyan;
+            this.lblVendedor.Location = new System.Drawing.Point(484, 67);
             this.lblVendedor.Name = "lblVendedor";
-            this.lblVendedor.Size = new System.Drawing.Size(57, 15);
+            this.lblVendedor.Size = new System.Drawing.Size(71, 23);
             this.lblVendedor.TabIndex = 3;
             this.lblVendedor.Text = "Vendedor";
             // 
             // btnVender
             // 
+            this.btnVender.FlatAppearance.BorderSize = 0;
+            this.btnVender.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVender.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnVender.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnVender.Location = new System.Drawing.Point(484, 380);
             this.btnVender.Name = "btnVender";
             this.btnVender.Size = new System.Drawing.Size(162, 42);
@@ -99,15 +111,19 @@ namespace Vista
             // lblMetodoDePago
             // 
             this.lblMetodoDePago.AutoSize = true;
-            this.lblMetodoDePago.Location = new System.Drawing.Point(28, 380);
+            this.lblMetodoDePago.BackColor = System.Drawing.Color.Transparent;
+            this.lblMetodoDePago.Font = new System.Drawing.Font("Bebas Neue", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblMetodoDePago.ForeColor = System.Drawing.Color.Cyan;
+            this.lblMetodoDePago.Location = new System.Drawing.Point(188, 358);
             this.lblMetodoDePago.Name = "lblMetodoDePago";
-            this.lblMetodoDePago.Size = new System.Drawing.Size(95, 15);
+            this.lblMetodoDePago.Size = new System.Drawing.Size(108, 23);
             this.lblMetodoDePago.TabIndex = 5;
             this.lblMetodoDePago.Text = "Metodo de pago";
             // 
             // txtMetodoDePago
             // 
-            this.txtMetodoDePago.Location = new System.Drawing.Point(139, 380);
+            this.txtMetodoDePago.BackColor = System.Drawing.Color.Aqua;
+            this.txtMetodoDePago.Location = new System.Drawing.Point(339, 358);
             this.txtMetodoDePago.Name = "txtMetodoDePago";
             this.txtMetodoDePago.Size = new System.Drawing.Size(100, 23);
             this.txtMetodoDePago.TabIndex = 6;
@@ -115,21 +131,26 @@ namespace Vista
             // lblPago
             // 
             this.lblPago.AutoSize = true;
-            this.lblPago.Location = new System.Drawing.Point(28, 417);
+            this.lblPago.BackColor = System.Drawing.Color.Transparent;
+            this.lblPago.Font = new System.Drawing.Font("Bebas Neue", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblPago.ForeColor = System.Drawing.Color.Cyan;
+            this.lblPago.Location = new System.Drawing.Point(102, 399);
             this.lblPago.Name = "lblPago";
-            this.lblPago.Size = new System.Drawing.Size(154, 15);
+            this.lblPago.Size = new System.Drawing.Size(194, 23);
             this.lblPago.TabIndex = 7;
             this.lblPago.Text = "Cantidad a pagar del cliente";
             // 
             // txtPago
             // 
-            this.txtPago.Location = new System.Drawing.Point(198, 417);
+            this.txtPago.BackColor = System.Drawing.Color.Aqua;
+            this.txtPago.Location = new System.Drawing.Point(339, 399);
             this.txtPago.Name = "txtPago";
             this.txtPago.Size = new System.Drawing.Size(100, 23);
             this.txtPago.TabIndex = 8;
             // 
             // dgbFactura
             // 
+            this.dgbFactura.BackgroundColor = System.Drawing.Color.Aqua;
             this.dgbFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgbFactura.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Vendedor,
@@ -184,6 +205,10 @@ namespace Vista
             // 
             // btnCerrar
             // 
+            this.btnCerrar.FlatAppearance.BorderSize = 0;
+            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrar.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnCerrar.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnCerrar.Location = new System.Drawing.Point(1122, 380);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(162, 42);
@@ -196,6 +221,8 @@ namespace Vista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Vista.Properties.Resources.BackGround;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1393, 463);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.dgbFactura);

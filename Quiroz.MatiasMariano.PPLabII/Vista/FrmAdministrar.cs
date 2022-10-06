@@ -33,23 +33,11 @@ namespace Vista
 
         private void FrmAdministrar_Load(object sender, EventArgs e)
         {
-            this.CargarProducto(this.electronica.Productos);
-
             this.cmbFiltrar.Items.Add("todos");
 
             this.cmbFiltrar.SelectedIndex = 0;
 
-            if (electronica.Productos != null)
-            {
-                foreach (Producto item in this.electronica.Productos)
-                {
-                    if (!(this.cmbFiltrar.Items.Contains(item.Combo)))
-                    {
-                        this.cmbFiltrar.Items.Add(item.Combo);
-                    }
-                    
-                }
-            }
+            this.ActualizarLista();
             
         }
 
@@ -74,7 +62,10 @@ namespace Vista
             }
 
         }
-
+        /// <summary>
+        /// carga los productos el listbox
+        /// </summary>
+        /// <param name="productos">recibe la lista a cargar</param>
         private void CargarProducto(List<Producto> productos)
         {
             this.lstProductos.Items.Clear();
@@ -90,6 +81,7 @@ namespace Vista
             if (MessageBox.Show("Estas seguro de eliminar el producto?", "Eliminar", MessageBoxButtons.YesNo)== DialogResult.Yes)
             {
                 this.electronica -= producto;
+                MessageBox.Show("Eliminado con exito!!!", "Eliminado", MessageBoxButtons.OK);
             }
 
 
@@ -134,5 +126,26 @@ namespace Vista
             }
             
         }
+        /// <summary>
+        /// actualiza la lista del combobox
+        /// </summary>
+        public void ActualizarLista()
+        {
+            this.CargarProducto(this.electronica.Productos); 
+
+            if (electronica.Productos != null)
+            {
+                foreach (Producto item in this.electronica.Productos)
+                {
+                    if (!(this.cmbFiltrar.Items.Contains(item.Combo)))
+                    {
+                        this.cmbFiltrar.Items.Add(item.Combo);
+                    }
+
+                }
+            }
+        }
+
+        
     }
 }
