@@ -12,8 +12,8 @@
 
  ### Dueño menu principal:
  ![Dueñomenuprincipal](./img/formprincipal.jpg)
- -  solo el Dueño tiene acceso y puede realizar ventas y administrar el inventario seleccione la opcion que desea ingresar
-
+ -   solo el Dueño tiene acceso y puede realizar ventas y administrar el inventario seleccione la opcion que desea ingresar
+ 
 
  ### Menu admisnistrar solo tiene acceso el Dueño
  ![DueñoAdministrar](./img/administrador.jpg)
