@@ -31,7 +31,7 @@ namespace Vista
         private void btnVentas_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form frmVentas = new FrmVentas(this.electronica,frmLogin,usuario);
+            Form frmVentas = new FrmVentas(this.electronica,this.frmLogin,this.usuario);
             frmVentas.Show();
 
         }
@@ -39,7 +39,7 @@ namespace Vista
         private void btnInventario_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form frmAdministrar = new FrmAdministrar(this.electronica,this.frmLogin);
+            Form frmAdministrar = new FrmAdministrar(this.electronica,this.frmLogin,this.usuario);
             frmAdministrar.Show();
         }
 
@@ -47,6 +47,11 @@ namespace Vista
         {
             this.frmLogin.Show();
             this.Close();
+        }
+
+        private void FrmPrincipal_Load(object sender, EventArgs e)
+        {
+            this.lblNombreApellido.Text = this.lblNombreApellido.Text = usuario.Nombre + " " + usuario.Apellido;
         }
     }
 }

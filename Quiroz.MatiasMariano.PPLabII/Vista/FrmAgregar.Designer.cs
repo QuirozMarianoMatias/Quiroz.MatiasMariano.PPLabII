@@ -50,6 +50,8 @@ namespace Vista
             this.txtCantidadDeCooler = new System.Windows.Forms.TextBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
+            this.lblAdmin = new System.Windows.Forms.Label();
+            this.lblNombreApellido = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // cmbAgregar
@@ -275,6 +277,30 @@ namespace Vista
             this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
+            // lblAdmin
+            // 
+            this.lblAdmin.AutoSize = true;
+            this.lblAdmin.BackColor = System.Drawing.Color.Transparent;
+            this.lblAdmin.Font = new System.Drawing.Font("Bebas Neue", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblAdmin.ForeColor = System.Drawing.Color.Aqua;
+            this.lblAdmin.Location = new System.Drawing.Point(493, -2);
+            this.lblAdmin.Name = "lblAdmin";
+            this.lblAdmin.Size = new System.Drawing.Size(54, 25);
+            this.lblAdmin.TabIndex = 20;
+            this.lblAdmin.Text = "Dueño";
+            // 
+            // lblNombreApellido
+            // 
+            this.lblNombreApellido.AutoSize = true;
+            this.lblNombreApellido.BackColor = System.Drawing.Color.Transparent;
+            this.lblNombreApellido.Font = new System.Drawing.Font("Bebas Neue", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblNombreApellido.ForeColor = System.Drawing.Color.Aqua;
+            this.lblNombreApellido.Location = new System.Drawing.Point(493, 23);
+            this.lblNombreApellido.Name = "lblNombreApellido";
+            this.lblNombreApellido.Size = new System.Drawing.Size(54, 25);
+            this.lblNombreApellido.TabIndex = 21;
+            this.lblNombreApellido.Text = "Dueño";
+            // 
             // FrmAgregar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -282,6 +308,8 @@ namespace Vista
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(664, 456);
+            this.Controls.Add(this.lblNombreApellido);
+            this.Controls.Add(this.lblAdmin);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.txtCantidadDeCooler);
@@ -303,6 +331,7 @@ namespace Vista
             this.Controls.Add(this.lblAgregar);
             this.Controls.Add(this.cmbAgregar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FrmAgregar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -335,5 +364,7 @@ namespace Vista
         private System.Windows.Forms.TextBox txtCantidadDeCooler;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.Label lblAdmin;
+        private System.Windows.Forms.Label lblNombreApellido;
     }
 }

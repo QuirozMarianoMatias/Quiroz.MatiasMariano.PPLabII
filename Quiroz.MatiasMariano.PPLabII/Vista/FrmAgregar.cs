@@ -15,15 +15,17 @@ namespace Vista
     {
         private Electronica electronica;
         private FrmAdministrar FrmAdministrar;
+        private Usuario usuario;
         public FrmAgregar()
         {
             InitializeComponent();
         }
 
-        public FrmAgregar(Electronica electronica, FrmAdministrar frmAdministrar) : this()
+        public FrmAgregar(Electronica electronica, FrmAdministrar frmAdministrar,Usuario usuario) : this()
         {
             this.electronica = electronica;
             this.FrmAdministrar = frmAdministrar;
+            this.usuario = usuario;
 
         }
 
@@ -31,7 +33,9 @@ namespace Vista
         {
             this.cmbAgregar.Items.Add(typeof(Perifericos).Name);
             this.cmbAgregar.Items.Add(typeof(Cpu).Name);
-            
+            this.lblNombreApellido.Text = this.lblNombreApellido.Text = usuario.Nombre + " " + usuario.Apellido;
+
+
 
         }
 
@@ -59,8 +63,11 @@ namespace Vista
 
 
                 Perifericos perifericos = new(id, precio,marca,conCable,tipo,combo,stock);
-
-                electronica += perifericos;
+                if(perifericos != null)
+                {
+                    electronica += perifericos;
+                }
+                
             }
 
             if (this.cmbAgregar.SelectedItem.ToString() == typeof(Cpu).Name)

@@ -34,6 +34,8 @@ namespace Vista
             this.btnInventario = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.lblOpcion = new System.Windows.Forms.Label();
+            this.lblAdmin = new System.Windows.Forms.Label();
+            this.lblNombreApellido = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnVentas
@@ -93,6 +95,30 @@ namespace Vista
             this.lblOpcion.TabIndex = 4;
             this.lblOpcion.Text = "Elija una opcion";
             // 
+            // lblAdmin
+            // 
+            this.lblAdmin.AutoSize = true;
+            this.lblAdmin.BackColor = System.Drawing.Color.Transparent;
+            this.lblAdmin.Font = new System.Drawing.Font("Bebas Neue", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblAdmin.ForeColor = System.Drawing.Color.Aqua;
+            this.lblAdmin.Location = new System.Drawing.Point(652, 23);
+            this.lblAdmin.Name = "lblAdmin";
+            this.lblAdmin.Size = new System.Drawing.Size(54, 25);
+            this.lblAdmin.TabIndex = 5;
+            this.lblAdmin.Text = "Dueño";
+            // 
+            // lblNombreApellido
+            // 
+            this.lblNombreApellido.AutoSize = true;
+            this.lblNombreApellido.BackColor = System.Drawing.Color.Transparent;
+            this.lblNombreApellido.Font = new System.Drawing.Font("Bebas Neue", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblNombreApellido.ForeColor = System.Drawing.Color.Aqua;
+            this.lblNombreApellido.Location = new System.Drawing.Point(652, 48);
+            this.lblNombreApellido.Name = "lblNombreApellido";
+            this.lblNombreApellido.Size = new System.Drawing.Size(54, 25);
+            this.lblNombreApellido.TabIndex = 6;
+            this.lblNombreApellido.Text = "Dueño";
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -100,15 +126,19 @@ namespace Vista
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblNombreApellido);
+            this.Controls.Add(this.lblAdmin);
             this.Controls.Add(this.lblOpcion);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnInventario);
             this.Controls.Add(this.btnVentas);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FrmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmPrincipal";
+            this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -119,5 +149,7 @@ namespace Vista
         private System.Windows.Forms.Button btnInventario;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Label lblOpcion;
+        private System.Windows.Forms.Label lblAdmin;
+        private System.Windows.Forms.Label lblNombreApellido;
     }
 }

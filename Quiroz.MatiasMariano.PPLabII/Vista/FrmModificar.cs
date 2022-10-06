@@ -15,20 +15,22 @@ namespace Vista
     {
         private Producto producto;
         private FrmAdministrar frmAdministrar;
+        private Usuario usuario;
         
         public FrmModificar()
         {
             InitializeComponent();
         }
-        public FrmModificar(Producto producto, FrmAdministrar frmAdministrar):this()
+        public FrmModificar(Producto producto, FrmAdministrar frmAdministrar,Usuario usuario):this()
         {
             
             this.producto = producto;
             this.frmAdministrar = frmAdministrar;
+            this.usuario = usuario;
         }
         private void FrmModificar_Load(object sender, EventArgs e)
         {
-
+            this.lblNombreApellido.Text = usuario.Nombre + " " + usuario.Apellido;
             this.cmbModificar.Items.Add("Combo");
             this.cmbModificar.Items.Add("Precio");
             this.cmbModificar.Items.Add("Stock");

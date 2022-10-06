@@ -37,13 +37,16 @@ namespace Vista
 
         private void FrmVentas_Load(object sender, EventArgs e)
         {
+            this.lblNombreApellido.Text = usuario.Nombre + " " + usuario.Apellido;
             if(this.usuario.Admin)
             {
+                this.lblUsuario.Text = "Dueño";
                 this.btnVender.BackColor = Color.DarkSeaGreen;
                 this.btnCerrar.BackColor = Color.DarkSeaGreen;
             }
             else
             {
+                this.lblUsuario.Text = "Vendedor";
                 this.btnVender.BackColor = Color.DarkOliveGreen;
                 this.btnCerrar.BackColor = Color.DarkOliveGreen;
             }

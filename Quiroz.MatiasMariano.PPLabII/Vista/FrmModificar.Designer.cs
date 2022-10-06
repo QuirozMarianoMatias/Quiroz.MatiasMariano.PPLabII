@@ -42,6 +42,8 @@ namespace Vista
             this.lblProducto = new System.Windows.Forms.Label();
             this.txtStock = new System.Windows.Forms.TextBox();
             this.lblStock = new System.Windows.Forms.Label();
+            this.lblAdmin = new System.Windows.Forms.Label();
+            this.lblNombreApellido = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnAceptar
@@ -187,6 +189,30 @@ namespace Vista
             this.lblStock.Text = "Stock";
             this.lblStock.Visible = false;
             // 
+            // lblAdmin
+            // 
+            this.lblAdmin.AutoSize = true;
+            this.lblAdmin.BackColor = System.Drawing.Color.Transparent;
+            this.lblAdmin.Font = new System.Drawing.Font("Bebas Neue", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblAdmin.ForeColor = System.Drawing.Color.Aqua;
+            this.lblAdmin.Location = new System.Drawing.Point(549, 13);
+            this.lblAdmin.Name = "lblAdmin";
+            this.lblAdmin.Size = new System.Drawing.Size(54, 25);
+            this.lblAdmin.TabIndex = 12;
+            this.lblAdmin.Text = "Dueño";
+            // 
+            // lblNombreApellido
+            // 
+            this.lblNombreApellido.AutoSize = true;
+            this.lblNombreApellido.BackColor = System.Drawing.Color.Transparent;
+            this.lblNombreApellido.Font = new System.Drawing.Font("Bebas Neue", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblNombreApellido.ForeColor = System.Drawing.Color.Aqua;
+            this.lblNombreApellido.Location = new System.Drawing.Point(549, 38);
+            this.lblNombreApellido.Name = "lblNombreApellido";
+            this.lblNombreApellido.Size = new System.Drawing.Size(54, 25);
+            this.lblNombreApellido.TabIndex = 13;
+            this.lblNombreApellido.Text = "Dueño";
+            // 
             // FrmModificar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -194,6 +220,8 @@ namespace Vista
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(685, 468);
+            this.Controls.Add(this.lblNombreApellido);
+            this.Controls.Add(this.lblAdmin);
             this.Controls.Add(this.lblStock);
             this.Controls.Add(this.txtStock);
             this.Controls.Add(this.lblProducto);
@@ -207,6 +235,7 @@ namespace Vista
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAceptar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FrmModificar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -231,5 +260,7 @@ namespace Vista
         private System.Windows.Forms.Label lblProducto;
         private System.Windows.Forms.TextBox txtStock;
         private System.Windows.Forms.Label lblStock;
+        private System.Windows.Forms.Label lblAdmin;
+        private System.Windows.Forms.Label lblNombreApellido;
     }
 }

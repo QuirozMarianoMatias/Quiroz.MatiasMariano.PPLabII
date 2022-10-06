@@ -29,6 +29,7 @@ namespace Vista
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVentas));
             this.lblProductos = new System.Windows.Forms.Label();
             this.lstProductos = new System.Windows.Forms.ListBox();
             this.lstVendedor = new System.Windows.Forms.ListBox();
@@ -46,6 +47,8 @@ namespace Vista
             this.MetodoDePago = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Vuelto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnCerrar = new System.Windows.Forms.Button();
+            this.lblUsuario = new System.Windows.Forms.Label();
+            this.lblNombreApellido = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgbFactura)).BeginInit();
             this.SuspendLayout();
             // 
@@ -217,6 +220,30 @@ namespace Vista
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
+            // lblUsuario
+            // 
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.BackColor = System.Drawing.Color.Transparent;
+            this.lblUsuario.Font = new System.Drawing.Font("Bebas Neue", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblUsuario.ForeColor = System.Drawing.Color.Aqua;
+            this.lblUsuario.Location = new System.Drawing.Point(1205, 13);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(37, 25);
+            this.lblUsuario.TabIndex = 11;
+            this.lblUsuario.Text = "asd";
+            // 
+            // lblNombreApellido
+            // 
+            this.lblNombreApellido.AutoSize = true;
+            this.lblNombreApellido.BackColor = System.Drawing.Color.Transparent;
+            this.lblNombreApellido.Font = new System.Drawing.Font("Bebas Neue", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblNombreApellido.ForeColor = System.Drawing.Color.Aqua;
+            this.lblNombreApellido.Location = new System.Drawing.Point(1205, 38);
+            this.lblNombreApellido.Name = "lblNombreApellido";
+            this.lblNombreApellido.Size = new System.Drawing.Size(37, 25);
+            this.lblNombreApellido.TabIndex = 12;
+            this.lblNombreApellido.Text = "asd";
+            // 
             // FrmVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -224,6 +251,8 @@ namespace Vista
             this.BackgroundImage = global::Vista.Properties.Resources.BackGround;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1393, 463);
+            this.Controls.Add(this.lblNombreApellido);
+            this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.dgbFactura);
             this.Controls.Add(this.txtPago);
@@ -236,6 +265,7 @@ namespace Vista
             this.Controls.Add(this.lstProductos);
             this.Controls.Add(this.lblProductos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FrmVentas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -266,5 +296,7 @@ namespace Vista
         private System.Windows.Forms.DataGridViewTextBoxColumn MetodoDePago;
         private System.Windows.Forms.DataGridViewTextBoxColumn Vuelto;
         private System.Windows.Forms.Button btnCerrar;
+        private System.Windows.Forms.Label lblUsuario;
+        private System.Windows.Forms.Label lblNombreApellido;
     }
 }
