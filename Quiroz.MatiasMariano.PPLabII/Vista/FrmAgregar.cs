@@ -41,54 +41,59 @@ namespace Vista
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if (this.cmbAgregar.SelectedItem.ToString() == typeof(Perifericos).Name)
+            if(this.cmbAgregar.SelectedItem != null)
             {
-
-
-                int id = int.Parse(this.txtId.Text);
-                float precio = float.Parse(this.txtPrecio.Text);
-                string marca = this.txtMarca.Text;
-                bool conCable = false;
-                ETipo tipo = (ETipo)this.cmbTipo.SelectedItem;
-                string combo = this.txtCombo.Text;
-                int stock = int.Parse(this.txtStock.Text);
-
-
-
-                if (cmbConCable.SelectedItem.ToString() == "si")
+                if (this.cmbAgregar.SelectedItem.ToString() == typeof(Perifericos).Name)
                 {
-                    conCable = true;
+
+
+                    int id = int.Parse(this.txtId.Text);
+                    float precio = float.Parse(this.txtPrecio.Text);
+                    string marca = this.txtMarca.Text;
+                    bool conCable = false;
+                    ETipo tipo = (ETipo)this.cmbTipo.SelectedItem;
+                    string combo = this.txtCombo.Text;
+                    int stock = int.Parse(this.txtStock.Text);
+
+
+
+                    if (cmbConCable.SelectedItem.ToString() == "si")
+                    {
+                        conCable = true;
+                    }
+
+
+
+                    Perifericos perifericos = new(id, precio, marca, conCable, tipo, combo, stock);
+                    if (perifericos != null)
+                    {
+                        electronica += perifericos;
+                    }
+
                 }
-                
 
-
-                Perifericos perifericos = new(id, precio,marca,conCable,tipo,combo,stock);
-                if(perifericos != null)
+                if (this.cmbAgregar.SelectedItem.ToString() == typeof(Cpu).Name)
                 {
-                    electronica += perifericos;
+
+
+                    int id = int.Parse(this.txtId.Text);
+                    float precio = float.Parse(this.txtPrecio.Text);
+                    string marca = this.txtMarca.Text;
+                    int cantidadDeCooler = int.Parse(this.txtCantidadDeCooler.Text);
+                    ETipo tipo = (ETipo)this.cmbTipo.SelectedItem;
+                    string combo = this.txtCombo.Text;
+                    int stock = int.Parse(this.txtStock.Text);
+
+
+                    Cpu cpu = new(id, precio, marca, cantidadDeCooler, tipo, combo, stock);
+
+                    electronica += cpu;
                 }
-                
+                MessageBox.Show("Agregado con exito", "Agregar", MessageBoxButtons.OK);
+                FrmAdministrar.ActualizarLista();
             }
-
-            if (this.cmbAgregar.SelectedItem.ToString() == typeof(Cpu).Name)
-            {
-
-
-                int id = int.Parse(this.txtId.Text);
-                float precio = float.Parse(this.txtPrecio.Text);
-                string marca = this.txtMarca.Text;
-                int cantidadDeCooler = int.Parse(this.txtCantidadDeCooler.Text);
-                ETipo tipo = (ETipo)this.cmbTipo.SelectedItem;
-                string combo = this.txtCombo.Text;
-                int stock = int.Parse(this.txtStock.Text);
-
-
-                Cpu cpu = new(id, precio, marca, cantidadDeCooler, tipo, combo, stock);
-
-                electronica += cpu;
-            }
-            MessageBox.Show("Agregado con exito", "Agregar", MessageBoxButtons.OK);
-            FrmAdministrar.ActualizarLista();
+            
+           
 
         }
 
