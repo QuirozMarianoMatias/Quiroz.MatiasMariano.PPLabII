@@ -19,10 +19,10 @@ namespace Vista
             electronica = new Electronica();
 
             //agrego usuarios
-            electronica += new Usuario(1, "Pepe", "Perez", "perez21@gmail.com", "123asd", true);
-            electronica += new Usuario(2, "rodrigo", "Dias", "Dias@gmail.com", "asd123");
-            electronica += new Usuario(3, "carlos", "baus", "baus@gmail.com", "asd");
-            electronica += new Usuario(4, "emanuel", "villegas", "villegas@gmail.com", "123");
+            electronica += new Usuario(1, "Pepe", "Perez", "perez21@gmail.com", "123asd", true,"Admin");
+            electronica += new Usuario(2, "rodrigo", "Dias", "Dias@gmail.com", "asd123","Vendedor");
+            electronica += new Usuario(3, "carlos", "baus", "baus@gmail.com", "asd","Contador");
+            electronica += new Usuario(4, "emanuel", "villegas", "villegas@gmail.com", "123","Vendedor");
             //agrego productos
             electronica += new Perifericos(1,1000,"logitech", true, ETipo.Teclado,"combo1",20);
             electronica += new Perifericos(2, 3000, "logitech", true, ETipo.Mouse, "combo1",15);
@@ -55,8 +55,17 @@ namespace Vista
                     }
                     else
                     {
-                        FrmVentas ventas = new FrmVentas(electronica,this,item); 
-                        ventas.Show();
+                        if(item.Cargo == "Vendedor")
+                        {
+                            FrmVentas ventas = new FrmVentas(electronica, this, item);
+                            ventas.Show();
+                        }
+                        else
+                        {
+                            FrmContador frmContador = new FrmContador(electronica);
+                            frmContador.Show();
+                        }
+                       
                         //ventas.FormClosing();
                         
                     }

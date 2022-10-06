@@ -14,9 +14,10 @@ namespace Entidades
         private string email;
         private string clave;
         private bool admin;
+        private string cargo;
 
 
-        public Usuario(int id, string nombre, string apellido, string email, string clave, bool admin)
+        public Usuario(int id, string nombre, string apellido, string email, string clave, bool admin,string cargo)
         {
             this.id = id;
             this.nombre = nombre;
@@ -24,12 +25,13 @@ namespace Entidades
             this.email = email;
             this.clave = clave;
             this.admin = admin;
+            this.cargo = cargo;
 
         }
 
-        public Usuario(int id, string nombre, string apellido, string email, string clave) : this(id, nombre, apellido, email, clave, false)
+        public Usuario(int id, string nombre, string apellido, string email, string clave,string cargo) : this(id, nombre, apellido, email, clave, false,cargo)
         {
-
+            this.cargo = cargo; 
 
         }
 
@@ -38,6 +40,15 @@ namespace Entidades
             get
             {
                 return this.nombre;
+            }
+
+        }
+
+        public string Cargo
+        {
+            get
+            {
+                return this.cargo;
             }
 
         }

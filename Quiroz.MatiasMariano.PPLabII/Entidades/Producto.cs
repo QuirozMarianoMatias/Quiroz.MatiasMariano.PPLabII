@@ -22,6 +22,7 @@ namespace Entidades
         protected string combo;
         protected int stock;
         protected string marca;
+        protected int ventasPorCombo;
 
         protected Producto(int id, float precio, string marca,ETipo tipo, string combo,int stock)
         {
@@ -31,6 +32,7 @@ namespace Entidades
             this.tipo = tipo;
             this.combo = combo;
             this.stock = stock;
+            this.ventasPorCombo = 0;
         }
 
 
@@ -45,6 +47,20 @@ namespace Entidades
                 if(value > 0)
                 {
                     this.precio = value;
+                }
+            }
+        }
+        public int VentasPorCombo
+        {
+            get
+            {
+                return this.ventasPorCombo;
+            }
+            set
+            {
+                if (value > 0)
+                {
+                    this.ventasPorCombo = value;
                 }
             }
         }

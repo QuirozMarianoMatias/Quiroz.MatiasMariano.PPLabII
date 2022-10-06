@@ -11,18 +11,22 @@ namespace Entidades
         
         private static float capital;
         private List<Producto> productos;
+        private List<Producto> ventas;
         private List<Usuario> usuarios;
+        private static int cantidadDeVentas;
 
 
         static Electronica()
         {
             Electronica.capital = 0;
+            cantidadDeVentas = 0;
         }
 
         public Electronica()
         {
             this.productos = new List<Producto>();
             this.usuarios = new List<Usuario>();
+            this.ventas = new List<Producto>();
 
         }
 
@@ -42,6 +46,15 @@ namespace Entidades
             get
             {
                 return this.usuarios;
+            }
+        }
+
+        public List<Producto> Ventas
+        {
+
+            get
+            {
+                return this.ventas;
             }
         }
 
@@ -65,9 +78,26 @@ namespace Entidades
 
         }
 
+        public int CantidadDeVentas
+        {
+            get
+            {
+                return Electronica.cantidadDeVentas;
+            }
+            set
+            {
+                if (value > 0)
+                {
+                    Electronica.cantidadDeVentas = value;
+                }
+            }
 
-      
-      
+
+        }
+
+
+
+
 
         public static bool operator ==(Electronica electronica, Producto producto)
         {
@@ -192,8 +222,11 @@ namespace Entidades
 
                     if(dineroDelCliente >= producto.Precio)
                     {
+                        electronica.ventas.Add(producto);
+                        producto.VentasPorCombo++;
                         Electronica.capital += producto.Precio;
                         producto.Stock--;
+                        Electronica.cantidadDeVentas++;
                         ventaCorrecta = true;
                     }
                     
@@ -203,9 +236,13 @@ namespace Entidades
                 {
                     if (dineroDelCliente >= Calculos.AplicarAumento(producto.Precio))
                     {
+                        electronica.ventas.Add(producto);
+                        producto.VentasPorCombo++;
                         Electronica.capital += Calculos.AplicarAumento(producto.Precio);
                         producto.Stock--;
+                        Electronica.cantidadDeVentas++;
                         ventaCorrecta = true;
+
                     }
 
 
@@ -263,6 +300,63 @@ namespace Entidades
 
 
         }
+
+        public Producto BuscarProductoMasVendido(Electronica electronica)
+        {
+            Producto producto = null;
+            bool flag = true;
+            int mayor= int.MinValue;
+
+            foreach (Producto item in electronica.ventas)
+            {
+                
+
+               foreach (Producto item2  in this.MostrarPorCombo(electronica, item.Combo))
+               {
+                    if(flag)
+                    {
+                        producto = item;
+                        mayor += item2.VentasPorCombo;
+                    }
+                    else
+                    {
+                        if(item.VentasPorCombo > mayor )
+                        {
+                            producto = item;
+                        }    
+                    }
+         
+
+               }
+
+
+            }
+
+            return producto;
+        }
+
+        public float PromedioPorTag(Electronica electronica,string combo)
+        {
+            int ventas = 0;
+            int contador = 0;
+            float promedio;
+
+            
+            foreach (Producto producto in electronica.Productos)
+            {
+                if (producto.Combo == combo)
+                {
+                    ventas += producto.VentasPorCombo;
+                    contador++;
+                }
+
+            }
+
+            promedio = (float)ventas / contador;
+
+            return promedio;
+        }
+
 
 
 
